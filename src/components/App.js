@@ -4,6 +4,7 @@ import MoviesResults from './MoviesResults';
 import MoviesDetails from './MovieDetails';
 import NoMatch from './notFoundPage';
 import FavMovies from './FavMovies';
+import RecentSearch from './RecentSearch';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
                 <Switch>
                   <Route path="/" exact component={MoviesResults}></Route>
                   <Route path="/fav" exact component={FavMovies}></Route>
+                  <Route path="/recentSearch" exact component={RecentSearch}></Route>
                   <Route path="/movieDetails" exact component={MoviesDetails}></Route>
                   <Route component={NoMatch} />
                 </Switch>

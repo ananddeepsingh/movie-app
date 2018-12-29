@@ -9,7 +9,7 @@ class MoviesResults extends Component {
   render() {
     return (
       <React.Fragment>
-          <div className="fav-row"><Link to="/fav">Favourite</Link></div>
+          <div className="fav-row"><Link to="/fav">Favourite</Link> || <Link to="/recentSearch">Recent Search</Link></div>
           <Search />
           <div className="col-container">
             {this.props.movies.map( (item, i) => {

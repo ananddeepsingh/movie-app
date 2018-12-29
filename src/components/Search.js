@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import { API_KEY } from '../secrets';
-import { movies } from '../actions';
+import { movies, addRecentSearch } from '../actions';
 import { connect } from 'react-redux';
 
 class Search extends Component {
@@ -12,8 +12,11 @@ class Search extends Component {
     }
   }
 
-  search (e){
+  search(e){
     e.preventDefault();
+
+    this.props.addRecentSearch(this.state.query)
+
     let SearchKeyword = this.state.query
     let URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=true&query=${SearchKeyword}`;
 
@@ -28,6 +31,7 @@ class Search extends Component {
       loader.classList.add('hide');
     })
   }
+
   render() {
     return (
       <Form onSubmit={ e => { this.search(e);}}>
@@ -36,7 +40,7 @@ class Search extends Component {
           <FormGroup>
             <ControlLabel>Search</ControlLabel>
             { ' ' }
-            <FormControl type="text" placeholder="Search Movies ..." onChange={ (e)=> this.setState({query: e.target.value})}></FormControl>
+            <FormControl type="text" ref="search" placeholder="Search Movies ..." onChange={ (e)=> this.setState({query: e.target.value}) }></FormControl>
             { ' ' }
             <Button bsStyle="success" onClick={ (e)=> this.search(e)}>Submit</Button>
           </FormGroup>
@@ -48,4 +52,4 @@ class Search extends Component {
 
 
 
-export default connect(null, { movies } )(Search);
+export default connect(null, { movies, addRecentSearch } )(Search);
