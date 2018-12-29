@@ -1,4 +1,4 @@
-##For Learning purpose, I have implemented React & Redux. Please check it outsa
+##For Learning purpose, I have implemented React & Redux. Please check it.
 
 ### How to start the app
 
@@ -10,4 +10,6 @@
 	<pre>npm start</pre>
 
 
-It will open an application from where you can search any movie
+It will open an application from where you can search any movie.
+
+For any query related to code, please commit singh.ananddeep@gmail.com
