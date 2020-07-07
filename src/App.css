@@ -7,7 +7,7 @@
   height: 40vmin;
 }
 
-.jumbotron h1, .jumbotron p{
+.jumbotron .jumbotron h1, .jumbotron .jumbotron p{
   color: #000;
 }
 
